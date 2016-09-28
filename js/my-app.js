@@ -26,7 +26,7 @@ $(document).on("click", "#comfirm-regis", function() {
     var check_agree=$('#check_agree').is(':checked');
 if(password==re_password && check_agree==true){
     var pack_data={username:username,password:password,gender:gender,age:age};
-    var url='http://127.0.0.1/testmobile/api/regis.php?jsoncallback=?';
+    var url='http://127.0.0.1/putitapp/api/regis.php?jsoncallback=?';
     $.getJSON( url, {
       pack_data:pack_data,
       format: 'json'
@@ -57,7 +57,7 @@ $(document).on("click", "#login", function() {
   var gender=$("#gender").val();//get value gender
   var age=$("#age").val();//get value age
   var pack_data={username:username,password:password,gender:gender,age:age};
-  var url='http://127.0.0.1/testmobile/api/login.php?jsoncallback=?';
+  var url='http://127.0.0.1/putitapp/api/login.php?jsoncallback=?';
   $.getJSON( url, {
     pack_data:pack_data,
     format: 'json'
@@ -75,7 +75,25 @@ $.mobile.changePage("#homepage");//when success login
   });//Complete sent data
 });//event click  login
 
+$(document).on("click", "#agenda", function() {
+$("#appview").html("");
+var content='<ul data-role="listview"> \
+<li><a href="#">Acura</a></li>   \
+<li><a href="#">Audi</a></li>  \
+<li><a href="#">BMW</a></li>   \
+<li><a href="#">Cadillac</a></li>   \
+<li><a href="#">Ferrari</a></li>  \
+</ul>';
+$("#appview").append(content);
+});//event click  agenda
 
+$(document).on("click", "#process", function() {
+$("#appview").html("");
+var content='<h2>Process </h2> \
+<img src="https://d13yacurqjgara.cloudfront.net/users/285475/screenshots/2092646/dog_walkcycle.gif" alt="process" />   \
+';
+$("#appview").append(content);
+});//event click  process
 
 
 // navbar page
