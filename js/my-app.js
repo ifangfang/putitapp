@@ -68,6 +68,8 @@ $(document).on("click", "#login", function() {
   var msg=data[i].msg;
   if(msg=="yes"){
 $.mobile.changePage("#homepage");//when success login
+var content='welcome ! '+username;
+$("#appview").append(content);
   }else{
   alert("Error! the username or password doesnt match.");
   }
@@ -110,48 +112,37 @@ $("#configbtn").click(function() {
 
 //end of seting navbar
 
+$(document).on("click", "#agenda", function() {
+$("#appview").html("");
+var content='<ul data-role="listview" class="ui-listview"> \
+<li class="ui-first-child"><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Acura</a></li>   \
+<li><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Audi</a></li>  \
+<li><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">BMW</a></li>   \
+<li><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Cadillac</a></li> \
+<li class="ui-last-child"><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Ferrari</a></li>  \
+</ul>';
+$("#appview").append(content);//apend to add content
+});//event click  agenda
+
+$(document).on("click", "#btn_check", function() {
+$("#appview").html("");
+var content=$(this).attr('car_id');
+$("#appview").append(content);
+});//event click  btn_check
+
+
+$(document).on("click", "#process", function() {
+$("#appview").html("");
+var content='<img src="http://www.ikea.com/us/en/images/products/korken-jar-with-lid__0131001_PE285442_S4.JPG" style="width:50px;">';
+$("#appview").append(content);
+});//event click  agenda
+
+
+$(document).on("click", "#result", function() {
+$("#appview").html("");
+var content='<img src="http://www.ikea.com/us/en/images/products/korken-jar-with-lid__0131001_PE285442_S4.JPG" style="width:50px;">';
+$("#appview").append(content);
+});//event click  agenda
 
 
 
-//timer
-function getTimeRemaining(endtime) {
-  var t = Date.parse(endtime) - Date.parse(new Date());
-  var seconds = Math.floor((t / 1000) % 60);
-  var minutes = Math.floor((t / 1000 / 60) % 60);
-  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-  var days = Math.floor(t / (1000 * 60 * 60 * 24));
-  return {
-    'total': t,
-    'days': days,
-    'hours': hours,
-    'minutes': minutes,
-    'seconds': seconds
-  };
-}
-
-function initializeClock(id, endtime) {
-  var clock = document.getElementById(id);
-  var daysSpan = clock.querySelector('.days');
-  var hoursSpan = clock.querySelector('.hours');
-  var minutesSpan = clock.querySelector('.minutes');
-  var secondsSpan = clock.querySelector('.seconds');
-
-  function updateClock() {
-    var t = getTimeRemaining(endtime);
-
-    daysSpan.innerHTML = t.days;
-    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-    if (t.total <= 0) {
-      clearInterval(timeinterval);
-    }
-  }
-
-  updateClock();
-  var timeinterval = setInterval(updateClock, 1000);
-}
-
-var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-initializeClock('clockdiv', deadline);
