@@ -2,67 +2,52 @@
 <head>
 <title>Chart Example</title>
 <script type="text/javascript" src="./js/fusioncharts.js"></script>
-<script type="text/javascript" src="./js/themes/fusioncharts.theme.fint.js"></script>
 <script type="text/javascript">
   FusionCharts.ready(function(){
     var fusioncharts = new FusionCharts({
-    type: 'column2d',
+    type: 'pie2d',
     renderAt: 'chart-container',
     width: '500',
-    height: '300',
-    dataFormat: 'json',
     dataSource: {
-        "chart": {
-            "caption": "Monthly ",
-            "subCaption": "Last year",
-            "xAxisName": "Month",
-            "yAxisName": "Amount (In USD)",
-            "numberPrefix": "$",
-            "canvasBgAlpha": "0",
-            "bgColor": "#DDDDDD",
-            "bgAlpha": "50",
-            "theme": "fint",
-            "exportEnabled": "1"
+    "chart": {
+        "caption": "Result of your Quality",
+        "bgcolor": "FFFFFF",
+        "showvalues": "1",
+        "showpercentvalues": "1",
+        "showborder": "0",
+        "showplotborder": "0",
+        "showlegend": "1",
+        "legendborder": "0",
+        "legendposition": "bottom",
+        "enablesmartlabels": "1",
+        "use3dlighting": "0",
+        "showshadow": "0",
+        "legendbgcolor": "#CCCCCC",
+        "legendbgalpha": "20",
+        "legendborderalpha": "0",
+        "legendshadow": "0",
+        "legendnumcolumns": "3",
+        "palettecolors": "#f8bd19,#e44a00,#008ee4,#33bdda"
+    },
+    "data": [
+        {
+            "label": "Study",
+            "value": "25"
         },
-
-        "data": [{
-            "label": "Jan",
-            "value": "420000"
-        }, {
-            "label": "Feb",
-            "value": "810000"
-        }, {
-            "label": "Mar",
-            "value": "720000"
-        }, {
-            "label": "Apr",
-            "value": "550000"
-        }, {
-            "label": "May",
-            "value": "910000"
-        }, {
-            "label": "Jun",
-            "value": "510000"
-        }, {
-            "label": "Jul",
-            "value": "680000"
-        }, {
-            "label": "Aug",
-            "value": "620000"
-        }, {
-            "label": "Sep",
-            "value": "610000"
-        }, {
-            "label": "Oct",
-            "value": "490000"
-        }, {
-            "label": "Nov",
-            "value": "900000"
-        }, {
-            "label": "Dec",
-            "value": "730000"
-        }]
-    }
+        {
+            "label": "Work",
+            "value": "25"
+        },
+        {
+            "label": "Sleep",
+            "value": "20"
+        },
+        {
+            "label": "Focus",
+            "value": "30"
+        }
+    ]
+}
 }
 );
     fusioncharts.render();
