@@ -138,11 +138,61 @@ $("#appview").append(content);
 });//event click  agenda
 
 
-$(document).on("click", "#result", function() {
-$("#appview").html("");
-var content='<img src="http://www.ikea.com/us/en/images/products/korken-jar-with-lid__0131001_PE285442_S4.JPG" style="width:50px;">';
-$("#appview").append(content);
-});//event click  agenda
 
+$(document).on("click", "#result", function() {
+    FusionCharts.ready(function(){
+      var fusioncharts = new FusionCharts({
+      type: 'pie2d',
+      renderAt: 'chart-container',
+      width: '100%',
+      dataSource: {
+      "chart": {
+          "caption": "Result of your Quality",
+          "bgcolor": "FFFFFF",
+          "showvalues": "1",
+          "showpercentvalues": "1",
+          "showborder": "0",
+          "showplotborder": "0",
+          "showlegend": "1",
+          "legendborder": "0",
+          "legendposition": "bottom",
+          "enablesmartlabels": "1",
+          "use3dlighting": "0",
+          "showshadow": "0",
+          "legendbgcolor": "#CCCCCC",
+          "legendbgalpha": "20",
+          "legendborderalpha": "0",
+          "legendshadow": "0",
+          "legendnumcolumns": "3",
+          "palettecolors": "#f8bd19,#e44a00,#008ee4,#33bdda"
+      },
+      "data": [
+          {
+              "label": "Study",
+              "value": "25"
+          },
+          {
+              "label": "Work",
+              "value": "25"
+          },
+          {
+              "label": "Sleep",
+              "value": "20"
+          },
+          {
+              "label": "Focus",
+              "value": "30"
+          }
+      ]
+  }
+  }
+  );
+      fusioncharts.render();
+  });
+
+$("#appview").html("");
+var content='<div id="chart-container"></div>';
+$("#appview").append(content);
+});//event click  result
 
 
