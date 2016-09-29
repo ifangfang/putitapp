@@ -62,36 +62,37 @@ a.ui-link.ui-btn.ui-shadow.ui-corner-all {
 }
 
 .ui-btn-left{
-	left: 65%;
+	left: 0;
+	padding-left:8px; 
 }
 
 
 /*timer*/
 
-#clockdiv{
-    font-family: sans-serif;
-    color: #fff;
-    display: inline-block;
-    font-weight: 50;
-    text-align: center;
-    font-size: 20px;
+
+#container-independency{
+    width: 90%;
+    max-width: 1620px;
+    background-color: #b8860b;
+    clear: both;
+    padding: 1%;
+    display: none;
+    box-sizing: border-box;
 }
 
-#clockdiv > div{
-    padding: 10px;
-    border-radius: 3px;
-    background: #444;
-    display: inline-block;
+#independency{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    background-color: #ffb6c1;
+    box-sizing: border-box;
 }
 
-#clockdiv div > span{
-    padding: 15px;
-    border-radius: 3px;
-    background: black;
-    display: inline-block;
-}
+#highcharts_container{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 
-.smalltext{
-    padding-top: 5px;
-    font-size: 16px;
 }
