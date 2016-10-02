@@ -26,7 +26,7 @@ $(document).on("click", "#comfirm-regis", function() {
     var check_agree=$('#check_agree').is(':checked');
 if(password==re_password && check_agree==true){
     var pack_data={username:username,password:password,gender:gender,age:age};
-    var url='http://127.0.0.1/putitapp/api/regis.php?jsoncallback=?';
+    var url='http://127.0.0.1/testmobile/api/regis.php?jsoncallback=?';
     $.getJSON( url, {
       pack_data:pack_data,
       format: 'json'
@@ -57,7 +57,7 @@ $(document).on("click", "#login", function() {
   var gender=$("#gender").val();//get value gender
   var age=$("#age").val();//get value age
   var pack_data={username:username,password:password,gender:gender,age:age};
-  var url='http://127.0.0.1/putitapp/api/login.php?jsoncallback=?';
+  var url='http://127.0.0.1/testmobile/api/login.php?jsoncallback=?';
   $.getJSON( url, {
     pack_data:pack_data,
     format: 'json'
@@ -77,25 +77,7 @@ $("#appview").append(content);
   });//Complete sent data
 });//event click  login
 
-$(document).on("click", "#agenda", function() {
-$("#appview").html("");
-var content='<ul data-role="listview"> \
-<li><a href="#">Acura</a></li>   \
-<li><a href="#">Audi</a></li>  \
-<li><a href="#">BMW</a></li>   \
-<li><a href="#">Cadillac</a></li>   \
-<li><a href="#">Ferrari</a></li>  \
-</ul>';
-$("#appview").append(content);
-});//event click  agenda
 
-$(document).on("click", "#process", function() {
-$("#appview").html("");
-var content='<h2>Process </h2> \
-<img src="https://d13yacurqjgara.cloudfront.net/users/285475/screenshots/2092646/dog_walkcycle.gif" alt="process" />   \
-';
-$("#appview").append(content);
-});//event click  process
 
 
 // navbar page
@@ -115,14 +97,54 @@ $("#configbtn").click(function() {
 $(document).on("click", "#agenda", function() {
 $("#appview").html("");
 var content='<ul data-role="listview" class="ui-listview"> \
-<li class="ui-first-child"><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Acura</a></li>   \
-<li><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Audi</a></li>  \
-<li><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">BMW</a></li>   \
-<li><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Cadillac</a></li> \
-<li class="ui-last-child"><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Ferrari</a></li>  \
+<li class="ui-first-child"><a href="#" id="li1" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Work</a></li>   \
+<li><a href="#" id="li2" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Study</a></li>  \
+<li><a href="#" id="li3" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Rest</a></li>   \
+<li><a href="#" id="li4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Media</a></li> \
+<li class="ui-last-child"><a href="#" id="li5" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Focus</a></li>  \
 </ul>';
 $("#appview").append(content);//apend to add content
 });//event click  agenda
+
+$(document).on("click", "#li1", function() {
+$("#appview").html("");
+var content='<img src="http://www.gbspaloke.be/images/beelden/construction1.gif" style="width:100%;">';
+$("#appview").append(content);
+});//event click  agenda
+
+$(document).on("click", "#li2", function() {
+$("#appview").html("");
+var content='<img src="http://www.gbspaloke.be/images/beelden/construction1.gif" style="width:100%;">';
+$("#appview").append(content);
+});//event click  agenda
+
+$(document).on("click", "#li3", function() {
+$("#appview").html("");
+var content='<img src="http://www.gbspaloke.be/images/beelden/construction1.gif" style="width:100%;">';
+$("#appview").append(content);
+});//event click  agenda
+
+$(document).on("click", "#li4", function() {
+$("#appview").html("");
+var content='<img src="http://www.gbspaloke.be/images/beelden/construction1.gif" style="width:100%;">';
+$("#appview").append(content);
+});//event click  agenda
+
+$(document).on("click", "#li5", function() {
+$("#appview").html("");
+var content='<img src="http://www.gbspaloke.be/images/beelden/construction1.gif" style="width:100%;">';
+$("#appview").append(content);
+});//event click  agenda
+
+
+
+
+
+
+
+
+
+
 
 $(document).on("click", "#btn_check", function() {
 $("#appview").html("");
@@ -133,9 +155,10 @@ $("#appview").append(content);
 
 $(document).on("click", "#process", function() {
 $("#appview").html("");
-var content='<img src="http://www.ikea.com/us/en/images/products/korken-jar-with-lid__0131001_PE285442_S4.JPG" style="width:50px;">';
+var content='<img src="http://www.gbspaloke.be/images/beelden/construction1.gif" style="width:100%;">';
 $("#appview").append(content);
 });//event click  agenda
+
 
 
 
@@ -147,7 +170,7 @@ $(document).on("click", "#result", function() {
       width: '100%',
       dataSource: {
       "chart": {
-          "caption": "Result of your Quality",
+          "caption": "Summary",
           "bgcolor": "FFFFFF",
           "showvalues": "1",
           "showpercentvalues": "1",
@@ -164,7 +187,7 @@ $(document).on("click", "#result", function() {
           "legendborderalpha": "0",
           "legendshadow": "0",
           "legendnumcolumns": "3",
-          "palettecolors": "#f8bd19,#e44a00,#008ee4,#33bdda"
+          "palettecolors": "#57A202,#F04C09,#20BDEF,#F9D107,#E909F0"
       },
       "data": [
           {
@@ -176,12 +199,16 @@ $(document).on("click", "#result", function() {
               "value": "25"
           },
           {
-              "label": "Sleep",
-              "value": "20"
+              "label": "Rest",
+              "value": "15"
           },
           {
               "label": "Focus",
               "value": "30"
+          },
+          {
+              "label": "Media",
+              "value": "5"
           }
       ]
   }
@@ -194,5 +221,4 @@ $("#appview").html("");
 var content='<div id="chart-container"></div>';
 $("#appview").append(content);
 });//event click  result
-
 
