@@ -7,11 +7,11 @@ $gender=$pack_data['gender'];//create variable password
 $age=$pack_data['age'];//create variable password
 //check data have username
 $sql = "select * from user where  username='$username' and password='$password' and gender='$gender' and age='$age' ";
-$sqlquery=mysqli_db_query($dbname, $sql);
+$sqlquery=mysql_db_query($dbname, $sql);
 $numrow = mysql_num_rows($sqlquery);
 if($numrow <1){
   $sqlinsert = "INSERT INTO user (username,password,gender,age) VALUES ('$username', '$password','$gender','$age');";
-  $sqlqueryinsert =mysqli_db_query($dbname, $sqlinsert );
+  $sqlqueryinsert =mysql_db_query($dbname, $sqlinsert );
   $msg="yes";
 }else{
   $msg="no";

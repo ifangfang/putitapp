@@ -1,0 +1,64 @@
+header {
+	padding-bottom: 50px;
+}
+
+
+.ui-bar-a {
+	background-color: #1192C0;
+	height: 60px;
+	position: fixed;
+	overflow: hidden;
+
+}
+
+img {
+	width: 30px;
+	padding: 5px;
+	border-radius: 8px;
+}
+
+h1 {
+	padding-bottom: 50px;
+	text-shadow: none;
+	color: #fff;
+	
+
+}
+.cont{
+	clear: both;
+}
+.cont1 div, .cont2 div, .cont3 div {
+	display: inline-table;
+	float: left;
+	width: 49%;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.cont1 div:hover img, .cont2 div:hover img, .cont3 div:hover img {
+	opacity: 0.4;
+}
+
+.ui-corner-all {
+	border-radius: 0;
+}
+
+
+
+#regis, #cancel, #login, #confirm-regis {
+	background-color: #1192C0;
+	color: #fff;
+	text-shadow: none;
+	border-radius: 0;
+}
+
+
+a.ui-link.ui-btn.ui-shadow.ui-corner-all {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+
+.ui-btn-left{
+	left: 0;
+	padding-left:8px; 
+}
